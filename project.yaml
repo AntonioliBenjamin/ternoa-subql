@@ -25,209 +25,209 @@ dataSources:
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: utility
             method: batch
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: utility
             method: batchAll
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: sudo
             method: sudo
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: balances
             method: transfer
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: balances
             method: transferKeepAlive
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: nfts
             method: create
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: nfts
             method: burn
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: nfts
             method: transfer
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: nfts
             method: finishSeries
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: nfts
             method: setIpfsReference
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: capsules
             method: create
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: capsules
             method: createFromNft
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: capsules
             method: remove
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: capsules
             method: addFunds
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: capsules
             method: setIpfsReference
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: addAccountToAllowList
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: addAccountToDisallowList
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: removeAccountFromAllowList
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: removeAccountFromDisallowList
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: buy
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: create
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: list
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: unlist
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setCommissionFee
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setLogoUri
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setMarketType
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setName
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setOwner
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: marketplace
             method: setUri
 
         - handler: handleCall
           kind: substrate/CallHandler
           filter:
-            specVersion: [41, 41]
+            specVersion: [40, 40]
             module: associatedAccounts
             method: setAltvrUsername
