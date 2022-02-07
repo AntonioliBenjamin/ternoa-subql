@@ -11,11 +11,11 @@
     "MarketplaceId": "u32",
     "BalanceCaps": "Balance",
     "NFTId": "u32",
-    "TernoaString": "Vec<u8>",
+    "String": "Text",
     "NFTSeriesId": "Text",
     "NFTData": {
       "owner": "AccountId",
-      "ipfs_reference": "Text",
+      "ipfs_reference": "String",
       "series_id": "NFTSeriesId",
       "locked": "bool"
     },
@@ -57,7 +57,7 @@
       "owner": "AccountId",
       "allow_list": "Vec<AccountId>",
       "disallow_list": "Vec<AccountId>",
-      "name": "Text",
+      "name": "String",
       "uri": "Option<URI>",
       "logo_uri": "Option<URI>"
     },
@@ -69,7 +69,7 @@
     },
     "CapsuleData": {
       "owner": "AccountId",
-      "ipfs_reference": "Text"
+      "ipfs_reference": "String"
     },
     "CapsuleLedger": "Vec<(NFTId, Balance)>",
     "Status": {
