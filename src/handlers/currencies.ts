@@ -17,6 +17,6 @@ export const transferHandler: ExtrinsicHandler = async (call, extrinsic): Promis
     await updateAccount(to.toString());
     await updateAccount(signer.toString());
   }catch(err){
-    logger.error("Error in transferHandler : " + JSON.stringify(err))
+    logger.error("Error in transferHandler : " + err.toString())
   }
 }
