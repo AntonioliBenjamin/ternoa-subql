@@ -33,6 +33,5 @@ npm install
 # ----Codegen Ternoa-Subql----
 npm run codegen
 
-
 # ----Building Ternoa-Subql----
 npm run build
