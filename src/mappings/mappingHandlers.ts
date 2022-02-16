@@ -20,7 +20,6 @@ import {
     removeAccountFromAllowListHandler,
     removeAccountFromDisallowListHandler,
     lockSerieHandler,
-    setNFTIpfsHandler,
     createFromNftHandler,
     createCapsuleHandler,
     removeCapsuleHandler,
@@ -38,28 +37,27 @@ extrinsicDispatcher.add('nfts', 'create', createHandler)
 extrinsicDispatcher.add('nfts', 'burn', burnHandler)
 extrinsicDispatcher.add('nfts', 'transfer', NFTtransferHandler)
 extrinsicDispatcher.add('nfts', 'finishSeries', lockSerieHandler)
-extrinsicDispatcher.add('nfts', 'setIpfsReference', setNFTIpfsHandler)
 extrinsicDispatcher.add('nfts', 'lend', lendNFTHandler)
-extrinsicDispatcher.add('capsules', 'create', createCapsuleHandler)
-extrinsicDispatcher.add('capsules', 'createFromNft', createFromNftHandler)
-extrinsicDispatcher.add('capsules', 'remove', removeCapsuleHandler)
-extrinsicDispatcher.add('capsules', 'addFunds', addFundsHandler)
-extrinsicDispatcher.add('capsules', 'setIpfsReference', setCapsuleIpfsHandler)
-extrinsicDispatcher.add('marketplace', 'buy', buyHandler)
-extrinsicDispatcher.add('marketplace', 'addAccountToAllowList', addAccountToAllowListHandler)
-extrinsicDispatcher.add('marketplace', 'addAccountToDisallowList', addAccountToDisallowListHandler)
-extrinsicDispatcher.add('marketplace', 'removeAccountFromAllowList', removeAccountFromAllowListHandler)
-extrinsicDispatcher.add('marketplace', 'removeAccountFromDisallowList', removeAccountFromDisallowListHandler)
-extrinsicDispatcher.add('marketplace', 'create', createMarketplaceHandler)
-extrinsicDispatcher.add('marketplace', 'list', listHandler)
-extrinsicDispatcher.add('marketplace', 'unlist', unlistHandler)
-extrinsicDispatcher.add('marketplace', 'setCommissionFee', setMarketplaceCommissionFeeHandler)
-extrinsicDispatcher.add('marketplace', 'setLogoUri', setMarketplaceLogoUriHandler)
-extrinsicDispatcher.add('marketplace', 'setMarketType', setMarketplaceTypeHandler)
-extrinsicDispatcher.add('marketplace', 'setName', setMarketplaceNameHandler)
-extrinsicDispatcher.add('marketplace', 'setOwner', setMarketplaceOwnerHandler)
-extrinsicDispatcher.add('marketplace', 'setUri', setMarketplaceUriHandler)
-extrinsicDispatcher.add('associatedAccounts', 'setAltvrUsername', addAssociatedAccountHandler)
+extrinsicDispatcher.add('capsules', 'create', createCapsuleHandler)// removed in this chain version
+extrinsicDispatcher.add('capsules', 'createFromNft', createFromNftHandler)// removed in this chain version
+extrinsicDispatcher.add('capsules', 'remove', removeCapsuleHandler)// removed in this chain version
+extrinsicDispatcher.add('capsules', 'addFunds', addFundsHandler)// removed in this chain version
+extrinsicDispatcher.add('capsules', 'setIpfsReference', setCapsuleIpfsHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'buy', buyHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'addAccountToAllowList', addAccountToAllowListHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'addAccountToDisallowList', addAccountToDisallowListHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'removeAccountFromAllowList', removeAccountFromAllowListHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'removeAccountFromDisallowList', removeAccountFromDisallowListHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'create', createMarketplaceHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'list', listHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'unlist', unlistHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setCommissionFee', setMarketplaceCommissionFeeHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setLogoUri', setMarketplaceLogoUriHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setMarketType', setMarketplaceTypeHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setName', setMarketplaceNameHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setOwner', setMarketplaceOwnerHandler)// removed in this chain version
+extrinsicDispatcher.add('marketplace', 'setUri', setMarketplaceUriHandler)// removed in this chain version
+extrinsicDispatcher.add('associatedAccounts', 'setAccount', addAssociatedAccountHandler)
 
 export async function handleCall(extrinsic: SubstrateExtrinsic): Promise<void> {
     logger.info(`${extrinsic.extrinsic.method.section}_${extrinsic.extrinsic.method.method}`)

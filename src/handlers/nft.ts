@@ -261,35 +261,6 @@ export const lockSerieHandler: ExtrinsicHandler = async (call, extrinsic): Promi
   }
 }
 
-export const setNFTIpfsHandler: ExtrinsicHandler = async (call, extrinsic): Promise<void> => {
-  const date = new Date()
-  const { extrinsic: _extrinsic, events } = extrinsic
-  const commonExtrinsicData = getCommonExtrinsicData(call, extrinsic)
-  const [id, ipfsReference] = call.args
-  if (commonExtrinsicData.isSuccess === 1){
-    try {
-        const record = await NftEntity.get(id.toString())
-        if (record){
-          const signer = _extrinsic.signer.toString()
-          const oldIpfs = record.nftIpfs
-          record.nftIpfs = formatString(ipfsReference.toString())
-          record.updatedAt = date
-          await record.save()
-          logger.info("NFT change Ipfs: " + JSON.stringify(oldIpfs) + " --> " + JSON.stringify(record.nftIpfs))
-          await updateAccount(signer);
-        }else{
-          logger.error('NFT change Ipfs error, NFT id not found at block : ' + commonExtrinsicData.blockId);
-        }
-    } catch (e) {
-        logger.error('NFT change Ipfs error at block: ' + commonExtrinsicData.blockId);
-        logger.error('NFT change Ipfs error detail: ' + e);
-    }
-  }else{
-    logger.error('NFT change Ipfs error at block: ' + commonExtrinsicData.blockId);
-    logger.error('NFT change Ipfs error detail: isExtrinsicSuccess ' + commonExtrinsicData.isSuccess);
-  }
-}
-
 export const lendNFTHandler: ExtrinsicHandler = async (call, extrinsic): Promise<void> => {
   const date = new Date()
   const { extrinsic: _extrinsic, events } = extrinsic

@@ -80,12 +80,6 @@ dataSources:
           kind: substrate/CallHandler
           filter:
             module: nfts
-            method: setIpfsReference
-        
-        - handler: handleCall
-          kind: substrate/CallHandler
-          filter:
-            module: nfts
             method: lend
 
         - handler: handleCall

@@ -7,9 +7,7 @@ export const addAssociatedAccountHandler: ExtrinsicHandler = async (call, extrin
   const date = new Date()
   const { extrinsic: _extrinsic, events } = extrinsic
   const commonExtrinsicData = getCommonExtrinsicData(call, extrinsic)
-  const method = call.method
-  const [value] = call.args
-  const accountName = method === "setAltvrUsername" ? "AltVR" : "AltVR"
+  const [key, value] = call.args
   if (commonExtrinsicData.isSuccess === 1){
     try {
         const signer = _extrinsic.signer.toString()
@@ -21,17 +19,15 @@ export const addAssociatedAccountHandler: ExtrinsicHandler = async (call, extrin
             record.createdAt = date
         }
         const indexesToDelete:number[] = record.accountName.reduce(function(arr, element, index) {
-          if (element === accountName) arr.push(index);
+          if (element === formatString(key.toString())) arr.push(index);
           return arr;
         }, []);
         record.accountName = record.accountName.filter((_x,i) => !indexesToDelete.includes(i))
         record.accountValue = record.accountValue.filter((_x,i) => !indexesToDelete.includes(i))
-        let accountValue = formatString(value.toString())
-        record.accountName.push(accountName)
-        record.accountValue.push(accountValue)
+        record.accountName.push(formatString(value.toString()))
+        record.accountValue.push(formatString(key.toString()))
         record.updatedAt = date
         await record.save()
-        logger.info("add associated account: " + accountName + " --> " + accountValue)
         // Update concerned accounts
         await updateAccount(signer);
     } catch (e) {
