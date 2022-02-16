@@ -27,6 +27,7 @@ import {
     addFundsHandler,
     setCapsuleIpfsHandler,
     addAssociatedAccountHandler,
+    lendNFTHandler,
 } from '../handlers'
 
 // init and populate extrinsicDispatcher for specific extrinsic to record
@@ -38,6 +39,7 @@ extrinsicDispatcher.add('nfts', 'burn', burnHandler)
 extrinsicDispatcher.add('nfts', 'transfer', NFTtransferHandler)
 extrinsicDispatcher.add('nfts', 'finishSeries', lockSerieHandler)
 extrinsicDispatcher.add('nfts', 'setIpfsReference', setNFTIpfsHandler)
+extrinsicDispatcher.add('nfts', 'lend', lendNFTHandler)
 extrinsicDispatcher.add('capsules', 'create', createCapsuleHandler)
 extrinsicDispatcher.add('capsules', 'createFromNft', createFromNftHandler)
 extrinsicDispatcher.add('capsules', 'remove', removeCapsuleHandler)

@@ -12,7 +12,7 @@ export const createCapsuleHandler: ExtrinsicHandler = async (call, extrinsic): P
   const commonExtrinsicData = getCommonExtrinsicData(call, extrinsic)
   const [nftIpfs, capsuleIpfs, _seriesId] = call.args
   if (commonExtrinsicData.isSuccess === 1){
-    const nftCreatedEvents = extrinsic.events.filter(x => x.event.section === "nfts" && x.event.method === "Created")
+    const nftCreatedEvents = extrinsic.events.filter(x => x.event.section === "nfts" && x.event.method === "NFTCreated")
     const methodEventsOriginalIndexes:number[] = []
     const treasuryEventsOriginalIndexes:number[] = []
     const methodEvents = extrinsic.events.filter((x,i) => {
@@ -23,7 +23,7 @@ export const createCapsuleHandler: ExtrinsicHandler = async (call, extrinsic): P
       return false
     })
     const treasuryEventsForNFTsEvents = extrinsic.events.filter((_,i) => {
-      if (i < extrinsic.events.length - 1 && extrinsic.events[i+1].event.section === "nfts" && extrinsic.events[i+1].event.method === "Created"){
+      if (i < extrinsic.events.length - 1 && extrinsic.events[i+1].event.section === "nfts" && extrinsic.events[i+1].event.method === "NFTCreated"){
         treasuryEventsOriginalIndexes.push(i)
         return true
       }

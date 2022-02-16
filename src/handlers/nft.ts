@@ -14,10 +14,10 @@ export const createHandler: ExtrinsicHandler = async (call, extrinsic): Promise<
   const date = new Date()
   if (commonExtrinsicData.isSuccess === 1){
     if (commonExtrinsicData.isBatch === 1) logger.info("NFT Create Batch handled")
-    const methodEvents = extrinsic.events.filter(x => x.event.section === "nfts" && x.event.method === "Created")
+    const methodEvents = extrinsic.events.filter(x => x.event.section === "nfts" && x.event.method === "NFTCreated")
     const treasuryEventsOriginalIndexes:number[] = []
     const treasuryEventsForMethodEvents = extrinsic.events.filter((_,i) => {
-      if (i < extrinsic.events.length - 1 && extrinsic.events[i+1].event.section === "nfts" && extrinsic.events[i+1].event.method === "Created"){
+      if (i < extrinsic.events.length - 1 && extrinsic.events[i+1].event.section === "nfts" && extrinsic.events[i+1].event.method === "NFTCreated"){
         treasuryEventsOriginalIndexes.push(i)
         return true
       }
@@ -287,5 +287,32 @@ export const setNFTIpfsHandler: ExtrinsicHandler = async (call, extrinsic): Prom
   }else{
     logger.error('NFT change Ipfs error at block: ' + commonExtrinsicData.blockId);
     logger.error('NFT change Ipfs error detail: isExtrinsicSuccess ' + commonExtrinsicData.isSuccess);
+  }
+}
+
+export const lendNFTHandler: ExtrinsicHandler = async (call, extrinsic): Promise<void> => {
+  const date = new Date()
+  const { extrinsic: _extrinsic, events } = extrinsic
+  const commonExtrinsicData = getCommonExtrinsicData(call, extrinsic)
+  const [id, viewer] = call.args
+  if (commonExtrinsicData.isSuccess === 1){
+    try {
+        const record = await NftEntity.get(id.toString())
+        if (record){
+          const signer = _extrinsic.signer.toString()
+          record.viewer = (viewer && viewer.toString().length > 0) ? viewer.toString() : null
+          record.updatedAt = date
+          await record.save()
+          await updateAccount(signer);
+        }else{
+          logger.error('Lend NFT error, NFT id not found at block : ' + commonExtrinsicData.blockId);
+        }
+    } catch (e) {
+        logger.error('Lend NFT error at block: ' + commonExtrinsicData.blockId);
+        logger.error('Lend NFT error detail: ' + e);
+    }
+  }else{
+    logger.error('Lend NFT error at block: ' + commonExtrinsicData.blockId);
+    logger.error('Lend NFT error detail: isExtrinsicSuccess ' + commonExtrinsicData.isSuccess);
   }
 }
