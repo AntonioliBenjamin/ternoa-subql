@@ -36,6 +36,3 @@ npm run codegen
 
 # ----Building Ternoa-Subql----
 npm run build
-
-subql-node -f . --db-schema=subql_ternoa --timeout $TIMEOUT --force-clean
-
