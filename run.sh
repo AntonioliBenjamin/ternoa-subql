@@ -21,4 +21,4 @@ set -x
 
 env | grep DB_
 
-./bin/ternoa-query --name subql_ternoa --playground --unsafe #unsafe to get more than 100 rows
+./bin/ternoa-query --name subql_ternoa --playground --batch-size=2 --unsafe #unsafe to get more than 100 rows
