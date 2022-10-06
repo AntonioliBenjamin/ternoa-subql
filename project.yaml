@@ -6,7 +6,7 @@ repository: ""
 schema:
   file: ./schema.graphql
 network:
-  genesisHash: "0x18bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6ace"
+  genesisHash: "0x92ef051a9da828254586f374cbbe9b1383ebf6be346386b13fd77f2ebcae36eb"
   endpoint: wss://alphanet.ternoa.com
   dictionary: https://dictionary-alphanet.ternoa.dev/
 dataSources:
